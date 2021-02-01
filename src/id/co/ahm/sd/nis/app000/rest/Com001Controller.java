@@ -20,7 +20,6 @@ import id.co.ahm.sd.nis.app000.model.AhmsdnisMstbrnd;
 import id.co.ahm.sd.nis.app000.service.Com001Service;
 
 @Controller
-@RequestMapping("jx/com001")
 public class Com001Controller {
 
 	private static final Logger logger = Logger
@@ -31,7 +30,6 @@ public class Com001Controller {
 	}
 
 	@Autowired
-	@Qualifier(value = "com001Service")
 	private Com001Service com001Service;
 	
 	 @RequestMapping(value = "/getAllBrands", method = RequestMethod.GET)
