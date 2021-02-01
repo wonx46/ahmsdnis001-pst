@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import id.co.ahm.sd.nis.app000.model.AhmsdnisMstbrnd;
 import id.co.ahm.sd.nis.app000.service.Com001Service;
 
 @Controller
+@RequestMapping("jx/com001")
 public class Com001Controller {
 
 	private static final Logger logger = Logger
@@ -29,7 +31,14 @@ public class Com001Controller {
 	}
 
 	@Autowired
+	@Qualifier(value = "com001Service")
 	private Com001Service com001Service;
+	
+	 @RequestMapping(value = "/getAllBrands", method = RequestMethod.GET)
+	public List<AhmsdnisMstbrnd> getAllBrandnya(){
+			List<AhmsdnisMstbrnd> list = com001Service.getAllBrand();
+			return list;
+	}
 
 	@RequestMapping(value = "/")
 	public ModelAndView list(ModelAndView model) throws IOException {

@@ -10,8 +10,9 @@ import id.co.ahm.sd.nis.app000.dao.Com001AhmitMstBrndDao;
 import id.co.ahm.sd.nis.app000.model.AhmsdnisMstbrnd;
 import id.co.ahm.sd.nis.app000.service.Com001Service;
 
-@Service
-@Transactional
+
+@Service("com001Service")
+@Transactional(readOnly = true)
 public class Com001ServiceImpl implements Com001Service {
 
 	@Autowired

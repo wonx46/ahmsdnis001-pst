@@ -11,7 +11,7 @@ import id.co.ahm.jxf.dao.DefaultHibernateDao;
 import id.co.ahm.sd.nis.app000.dao.Com001AhmitMstBrndDao;
 import id.co.ahm.sd.nis.app000.model.AhmsdnisMstbrnd;
 
-@Repository
+@Repository("com001AhmitMstBrndDao")
 public class Com001AhmitMstBrndDaoImpl extends DefaultHibernateDao<Object, Serializable> implements Com001AhmitMstBrndDao {
 
 	@Autowired
