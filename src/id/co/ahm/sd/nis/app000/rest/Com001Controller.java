@@ -42,6 +42,7 @@ public class Com001Controller {
 
 	@RequestMapping(value = "/")
 	public ModelAndView list(ModelAndView model) throws IOException {
+		System.out.println("Com001Controller home");
 		List<AhmsdnisMstbrnd> list = com001Service.getAllBrand();
 		model.addObject("list", list);
 		model.setViewName("home");

@@ -10,16 +10,16 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
-@PropertySource("classpath:database.properties")
+//@PropertySource("classpath:database.properties")
 public class DbConnection {
 
-    @Value("${jdbc.url}")
+    @Value("${database.url}")
     private String url;
-    @Value("${jdbc.username}")
+    @Value("${database.user}")
     private String username;
-    @Value("${jdbc.password}")
+    @Value("${database.password}")
     private String password;
-    @Value("${jdbc.driver}")
+    @Value("${database.driver}")
     private String driver;
 
     @Bean

@@ -22,14 +22,14 @@
         <param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
     </context-param>
     
-    <filter>
+   <!--  <filter>
         <filter-name>securityFilterPst</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>securityFilterPst</filter-name>
         <url-pattern>/rest/*</url-pattern>
-    </filter-mapping>
+    </filter-mapping> -->
     
     <session-config>
         <session-timeout>
