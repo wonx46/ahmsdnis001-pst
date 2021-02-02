@@ -31,7 +31,7 @@ public class Com001Controller {
 	@Autowired
 	private Com001Service com001Service;
 	
-	 @RequestMapping(value = "/getAllBrands", method = RequestMethod.GET)
+	 @RequestMapping(value = "/getAllBrands", method = RequestMethod.GET, produces = {"application/json", "application/xml"})
 	public List<AhmsdnisMstbrnd> getAllBrandnya(){
 			List<AhmsdnisMstbrnd> list = com001Service.getAllBrand();
 			return list;
