@@ -3,13 +3,11 @@ package id.co.ahm.sd.nis.app000.rest;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,16 +30,11 @@ public class Com001Controller {
 	@Autowired
 	private Com001Service com001Service;
 	
-	 @RequestMapping(value = "/getAllBrands", method = RequestMethod.GET)
-	public List<AhmsdnisMstbrnd> getAllBrandnya(){
-			List<AhmsdnisMstbrnd> list = com001Service.getAllBrand();
-			return list;
-	}
 
 	@RequestMapping(value = "/")
 	public ModelAndView list(ModelAndView model) throws IOException {
-		List<AhmsdnisMstbrnd> list = com001Service.getAllBrand();
-		model.addObject("list", list);
+//		List<AhmsdnisMstbrnd> list = com001Service.getAllBrand();
+//		model.addObject("list", list);
 		model.setViewName("home");
 		return model;
 	}
@@ -89,9 +82,10 @@ public class Com001Controller {
 	@RequestMapping(value = "/editBrand", method = RequestMethod.GET)
 	public ModelAndView edit(HttpServletRequest request) {
 		String id = request.getParameter("id");
-		AhmsdnisMstbrnd obj = com001Service.getBrand(id);
+//		AhmsdnisMstbrnd obj = com001Service.getBrand(id);
 		ModelAndView model = new ModelAndView("idcoahmsdnismstbrand/IdcoahmsdnismstbrandFormUpdate");
-		model.addObject("obj", obj);
+//		model.addObject("obj", obj);
+		model.addObject("idnya", id);
 
 		return model;
 	}
