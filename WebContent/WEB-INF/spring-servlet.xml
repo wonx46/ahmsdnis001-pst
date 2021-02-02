@@ -11,7 +11,7 @@
 	<context:component-scan base-package="id.co.ahm" />
 
 	<!-- Getting Database properties -->
-	<context:property-placeholder location="classpath:application.properties" />
+	<!-- <context:property-placeholder location="classpath:application.properties" /> -->
 
 	<mvc:annotation-driven />
 
