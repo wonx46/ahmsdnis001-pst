@@ -90,7 +90,7 @@
         $(function() {
         	$.each(response, function(i, item) {
         	    $('<tr>').html(
-        	        "<td>" + response[i].vbrndcd + "</td><td>" + response[i].vbrndnm + "</td><td>" + response[i].vbrndtyp + "</td><td><a href=/ahmsdnis001-pst/editBrand?id="+response[i].vbrndcd+">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp; <a id=\"btndel\" href='#' onclick='deleteObj("+response[i].vbrndcd+");return false;' \">Delete</a></td>").appendTo('#records_table');
+        	        "<td>" + response[i].vbrndcd + "</td><td>" + response[i].vbrndnm + "</td><td>" + response[i].vbrndtyp + "</td><td><a href=/ahmsdnis001-pst/editBrand?id="+response[i].vbrndcd+">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp; <a id = btndel value="+response[i].vbrndcd+" href=# onclick=deleteObj('"+response[i].vbrndcd+"');return false; \">Delete</a></td>").appendTo('#records_table');
         	});
         });
 
@@ -99,8 +99,8 @@
 	
 	function deleteObj(code) {
 
-
-		$.ajax({
+		console.log("deleteObj: "+code);
+		 $.ajax({
 			type : "GET",
 			contentType : "application/json",
 			url : "http://localhost:9988/brand/delete/"+code,
@@ -113,13 +113,13 @@
 			},
 			error : function(e) {
 				console.log("ERROR: ", e);
-				/* display(e); */
+				
 			},
 			done : function(e) {
 				console.log("DONE");
-				/* enableSearchButton(true); */
+				
 			}
-		});
+		}); 
 
 	}
 	
